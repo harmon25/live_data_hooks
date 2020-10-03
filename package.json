@@ -1,0 +1,38 @@
+{
+  "name": "@live-data/hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/hooks.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "files": [
+    "README.md",
+    "LICENSE.md",
+    "package.json",
+    "dist/hooks.js",
+    "src/hooks.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "documentation": "^9.0.0",
+    "expose-loader": "^0.7.5",
+    "webpack": "4.41.5",
+    "webpack-cli": "^3.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "@live-data/core": "file:../../live_data"
+  }
+}
