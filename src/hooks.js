@@ -27,9 +27,9 @@ export function useLiveDataSocket() {
 }
 
 // could also use some loading state
-export function useLiveData(name, id = uuid(), opts) {
+export function useLiveData(name, defaultState = {}, id = uuid()) {
   const socket = useLiveDataSocket();
-  const [state, setState] = useState(null);
+  const [state, setState] = useState(defaultState);
   const handleDiff = useCallback((newState) => {
     setState({ ...newState });
   });
@@ -43,9 +43,7 @@ export function useLiveData(name, id = uuid(), opts) {
     })
   );
 
-  useEffect(() => {
-    return ldRef.current.connect();
-  }, [ldRef]);
+  useEffect(() => ldRef.current.connect(), [ldRef]);
 
   return [state, ldRef.current.push];
 }
