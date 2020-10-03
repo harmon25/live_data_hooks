@@ -14,11 +14,6 @@ const LiveDataContext = createContext(null);
 export function LiveDataProvider(props) {
   const socketRef = useRef(new LiveDataSocket());
 
-  // useEffect(() => {
-
-  //   socketRef.current = socket;
-  // }, []);
-
   return (
     <LiveDataContext.Provider value={socketRef}>
       {props.children}
